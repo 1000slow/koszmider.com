@@ -1,0 +1,17 @@
+---
+title: Portfolio
+permalink: /portfolio/
+---
+
+<div class="gallery">
+    <ul>
+        {% for item in site.portfolio %}
+            <li {% if item.featured %}class="featured"{% endif %}>
+                <a href="{{ item.url }}" style="background-image: url(/assets/portfolio/{{ item.main_img }});">
+                    <img src="/assets/portfolio/{{ item.main_img }}" />
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
