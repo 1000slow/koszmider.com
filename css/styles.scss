@@ -48,7 +48,7 @@ body {
     display: flex;
     min-height: 100vh;
     background: #f4f4f4;
-    font-family: "Raleway", sans-serif;
+    font-family: "Lato", sans-serif;
     color: #455175;
     padding: 1.5rem;
     -webkit-user-select: none;
@@ -64,6 +64,9 @@ a {
 
 .container {
     width: 100%;
+}
+
+.home .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -74,7 +77,8 @@ a {
 }
 
 nav {
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 nav .toggle {
@@ -143,7 +147,7 @@ nav .menu {
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     z-index: 20;
-    padding-right: 6rem;
+    padding-right: 1.5rem;
     font-size: 1.35rem;
 }
 
@@ -184,7 +188,7 @@ nav .menu a {
 nav .menu a svg {
     width: 1rem;
     height: 1rem;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 nav .menu a svg g {
@@ -192,7 +196,7 @@ nav .menu a svg g {
 }
 
 nav .menu .active a {
-    font-weight: 600;
+    font-weight: 700;
     color: #050F35;
 
 }
@@ -250,7 +254,7 @@ header a {
 .title .name {
     order: 2;
     font-size: 1.35rem;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 100%;
     margin-bottom: -0.15em;
 }
@@ -333,7 +337,7 @@ header a {
 .button {
     display: block;
     border: 1px solid #050F35;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     padding: 0.75em 2em;
     font-size: 1rem;
 }
@@ -361,6 +365,7 @@ header a {
 }
 
 .gallery a {
+    position: relative;
     display: block;
     background-size: cover;
     background-position: center;
@@ -370,14 +375,19 @@ header a {
     visibility: hidden;
 }
 
+.gallery .stack {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.5;
+}
+
+
 .content {
-    max-width: 40rem;
-    margin: 0 auto;
-
-    &.wide {
-        max-width: none;
-    }
-
     p {
         line-height: 135%;
         margin-top: 1.35em;
@@ -413,64 +423,47 @@ header a {
 }
 
 .about-me {
+    margin-top: 3rem;
+
+    .picture {
+        position: relative;
+        margin-bottom: 1.5rem;
+
+        .ornaments {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
     .header {
-        margin: 0 -1.5rem;
-    }
-
-    h2 {
-        margin-bottom: 1rem;
-        padding: 1rem 1.5rem;
-        background: #050F35;
-        color: #f4f4f4;
-        font-size: 2rem;
-        font-weight: 600;
-        line-height: 2rem;
-
-        small {
-            display: block;
-            font-size: 1rem;
-            font-weight: 500;
-            line-height: 1rem;
-
-            &:after {
-                content: "…";
-            }
-        }
-    }
-
-    .picture img {
-        display: block;
-    }
-
-    .contact {
-        margin-top: 3rem;
         margin-bottom: 3rem;
-        padding-top: 10rem;
-        background: url("/assets/img/about-me/tulips.png") no-repeat top;
-        background-size: 10rem;
-        text-align: center;
+        color: #050F35;
 
-        .email {
-            margin-top: 0.25rem;
-            font-size: 1.35rem;
-            line-height: 1.35rem;
+        h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 2rem;
         }
 
-        a {
-            text-decoration: underline;
+        .intro {
+            margin-top: 0;
+            font-size: 1.15rem;
         }
     }
+}
 
-    h3 {
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
+.portfolio-item {
+    margin-top: 1.5rem;
 }
 
 
 @media (orientation: landscape) {
     nav .menu {
         padding-right: 1.5rem;
+        font-size: 1rem;
     }
 
     nav .menu ul {
@@ -558,6 +551,11 @@ header a {
     .item-gallery {
         display: block;
     }
+
+    .about-me {
+        width: 60%;
+
+    }
 }
 
 
@@ -610,7 +608,7 @@ header a {
     .top-home .title .name {
         order: 2;
         font-size: 2rem;
-        font-weight: 700;
+        font-weight: 900;
     }
 
     .top-home .title small {
@@ -697,9 +695,29 @@ header a {
         display: none;
     }
 
-    .columns {
+    .narrow {
+        max-width: 40rem;
+        margin: 0 auto;
+
+    }
+
+    .portfolio-item {
+        margin-top: 3rem;
+    }
+
+    .about-me {
+        margin-top: 6rem;
+        width: 100%;
         display: flex;
-        flex-direction: row
+        flex-direction: row-reverse;
+
+        .picture {
+            margin-left: 5rem;
+        }
+
+        p {
+            font-size: 1.15rem;
+        }
     }
 }
 
