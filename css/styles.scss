@@ -239,6 +239,7 @@ header a {
 }
 
 .title {
+    margin-right: 3rem;
     display: flex;
     flex-flow: column;
     letter-spacing: 0.05em;
@@ -579,6 +580,10 @@ header a {
     .top {
         display: flex;
         justify-content: space-between;
+    }
+
+    .top .title {
+        margin-right: 0;
     }
 
     .top .title .name {
