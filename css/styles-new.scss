@@ -1,0 +1,301 @@
+---
+---
+
+/*
+== Reset
+== https://alligator.io/css/minimal-css-reset/
+*/
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*
+== Main
+*/
+
+html {
+    font-size: 16px;
+}
+
+body {
+    padding-top: 4rem;
+    background: #f4f4f4;
+    font-family: futura-pt, Futura, sans-serif;
+    color: #05434C;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    margin-top: 3em;
+    margin-bottom: 1.5rem;
+    margin-left: -0.75rem;
+    font-family: futura-pt-bold, Futura, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    border-left: 1.5rem solid transparent;
+    line-height: 1.5rem;
+    text-indent: -0.75rem;
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 1rem;
+    border-bottom: 1px solid #63EFC1;
+    background: #f4f4f4;
+    z-index: 1000;
+}
+
+.top header {
+    h1 {
+        background: url("/assets/img/logo.png");
+        background-size: 100%;
+        width: 2rem;
+        height: 2rem;
+
+        span {
+            visibility: hidden;
+        }
+    }
+}
+
+nav {
+    white-space: nowrap;
+}
+
+nav .toggle {
+    display: block;
+    width: 1.6rem;
+    height: 1.1rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.6rem;
+    right: 1.5rem;
+    z-index: 50;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+nav .toggle label {
+    display: none;
+}
+
+nav .toggle span {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+}
+nav .toggle span::after {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    margin-top: -2px;
+    border-top: 2px solid;
+    width: 100%;
+    content: " ";
+}
+
+
+nav .background {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #f4f4f4;
+    transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    opacity: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+nav .menu {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    z-index: 20;
+    padding-right: 1.5rem;
+    font-size: 1.35rem;
+}
+
+nav .menu ul {
+    position: relative;
+    padding: 2.5rem;
+    padding-right: 0;
+    border: 1px solid;
+    border-left: none;
+}
+
+nav .menu a {
+    display: block;
+    padding-top: 1.35rem;
+    padding-bottom: 1.35rem;
+    color: #05434C;
+}
+
+nav .menu a:hover {
+    color: #05434C;
+}
+
+html.menu-visible {
+    position: relative;
+    overflow: hidden;
+}
+
+body.menu-visible {
+    position: relative;
+    overflow: hidden;
+}
+
+nav.visible .background {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+nav.visible .menu {
+    transform: none;
+}
+
+.container {
+    padding: 1.5rem;
+}
+
+#hero {
+    font-family: futura-pt-bold, Futura, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    p {
+        margin-top: 1rem;
+    }
+
+    span {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+#portfolio h2 {
+    border-color: #FACFBB;
+}
+
+.gallery {
+    li + li {
+        position: relative;
+        margin-top: 1.5rem;
+    }
+
+    img {
+        display: block;
+    }
+
+    .stack {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+#about-me {
+    h2 {
+        border-color: #63EFC1;
+    }
+
+    .quote {
+        position: relative;
+        border-top: 0.125rem solid #63EFC1;
+        margin-left: -0.75rem;
+        padding-left: 0.625rem;
+        border-left: 0.125rem solid #63EFC1;
+        margin-right: 3.5rem;
+        text-align: justify;
+
+        div {
+            margin-top: -0.8rem;
+            padding-top: 0.8rem;
+            margin-right: -3.5rem;
+            padding-top: 2.3rem;
+            background: url("/assets/img/quote.png") no-repeat top right;
+            background-size: 2rem;
+        }
+    }
+
+    .hi {
+        font-size: 1.5rem;
+        font-family: futura-pt-bold, Futura, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    p + p {
+        margin-top: 1.5rem;
+    }
+
+    .icons {
+        margin-top: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 16rem;
+        display: flex;
+
+        li {
+            margin: 0 1em;
+            flex-grow: 1;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 3rem;
+        }
+    }
+
+}

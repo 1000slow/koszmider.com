@@ -2,37 +2,49 @@
 layout: home
 permalink: /
 ---
+<div class="container">
+    <div id="hero">
+        <img src="/assets/img/hero.png" alt="" width="2612" height="2501" />
 
-<article class="featured-gallery" id="featured-gallery">
-    <div class="border"></div>
-    <ul>
-        <li class="empty">
-            <img src="/assets/img/empty.png" width="884" height="1596" alt="" />
-        </li>
-        <li class="empty">
-            <img src="/assets/img/empty.png" width="884" height="1596" alt="" />
-        </li>
-        <li class="empty">
-            <img src="/assets/img/empty.png" width="884" height="1596" alt="" />
-        </li>
-        <li class="empty">
-            <img src="/assets/img/empty.png" width="884" height="1596" alt="" />
-        </li>
-        <li class="item i1">
-            <img src="/assets/img/spring@3x.png" width="884" height="1596" alt="Spring" />
-        </li>
-        <li class="item i2">
-            <img src="/assets/img/summer@3x.png" width="884" height="1596" alt="Summer" />
-        </li>
-        <li class="item i3">
-            <img src="/assets/img/autumn@3x.png" width="884" height="1596" alt="Spring" />
-        </li>
-        <li class="item i4">
-            <img src="/assets/img/winter@3x.png" width="884" height="1596" alt="Summer" />
-        </li>
-    </ul>
-</article>
+        <p>Challenge? <span>Yes, please.</span></p>
+    </div>
 
-<div class="invitation">
-    <a class="button" href="/portfolio">Portfolio</a>
+    <div id="portfolio">
+        <h2>Portfolio</h2>
+    </div>
+
+    <div class="gallery">
+        <ul>
+            {% for item in site.portfolio %}
+            <li {% if item.featured %}class="featured"{% endif %}>
+                <a href="{{ item.url }}" style="background-image: url(/assets/portfolio/{{ item.main_img }});">
+                    <img src="/assets/portfolio/{{ item.main_img }}" />
+                    {% if item.stack %}
+                    <img src="/assets/img/stack-{{ item.stack_color }}.png" alt="Multiple items" class="stack" />
+                    {% endif %}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="about-me">
+        <h2>About me</h2>
+
+        <div class="quote">
+            <div>
+                <p class="hi">Hi! I'm Gosia</p>
+
+                <p>More often than not I’m an observer - I look cautiously at the world around me, constantly searching for inspiration. My adventure with visual arts began when I was still a kid when the first computer appeared at home.</p>
+                <p>My drive to create led me to an art school. Out of all my interests - from making movies, through drawing and painting to music production - I picked computer graphics and illustration as my career path.</p>
+                <p>Communication is definitely one of the most important aspects of my work. When working with me you can expect my full commitment towards understanding the complete picture as I believe it’s a necessary foundation of satisfying and fruitful collaboration. This way I can draw from my creativity in order to help you accomplish your goal instead of just blindly following a set of instructions.</p>
+                <p>I’m a sensitive person, but also a positive one. I always try to put a smile on another person’s face and because of that I pour all my heart into every project and make sure there’s a little bit of me in every finished piece.</p>
+
+                <ul class="icons">
+                    <li><img src="/assets/img/pencils.png" width="100" height="100" alt="" /></li>
+                    <li><img src="/assets/img/camera.png" width="100" height="100" alt="" /></li>
+                    <li><img src="/assets/img/pointer.png" width="100" height="100" alt="" /></li>
+                </ul>
+        </div>
+    </div>
 </div>

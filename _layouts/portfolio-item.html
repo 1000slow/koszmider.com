@@ -12,7 +12,6 @@ layout: default
             <ul>
                 {% for img in page.images %}
                 {% assign id = img | split: "." | first | slugify %}
-
                     <li>
                         <a href="#{{ id }}" style="background-image: url(/assets/portfolio/{{ img }});">
                             <img src="/assets/portfolio/{{ img }}" alt="{{ page.title }}" />
