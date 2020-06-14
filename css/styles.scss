@@ -48,7 +48,9 @@ body {
     display: flex;
     min-height: 100vh;
     background: #f4f4f4;
-    font-family: "Lato", sans-serif;
+    font-family: futura-pt, Futura, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     color: #455175;
     padding: 1.5rem;
     -webkit-user-select: none;
@@ -266,85 +268,6 @@ header a {
     line-height: 100%;
     margin-bottom: 0.25rem;
     color: #455175;
-}
-
-.featured-gallery {
-    position: relative;
-    padding: 0 5.5%;
-}
-
-.featured-gallery .border {
-    position: absolute;
-    border: 1px solid;
-    top: 17%;
-    left: 0;
-    right: 0;
-    bottom: 17%;
-}
-
-.featured-gallery ul {
-    position: relative;
-    display: flex;
-}
-
-.featured-gallery .empty {
-    width: 100%;
-    display: none;
-}
-
-.featured-gallery .empty:first-child {
-    display: block;
-}
-
-.featured-gallery .item {
-    opacity: 0;
-    transition: transform 1s, opacity 1s;
-}
-
-.featured-gallery .item.i1 {
-    opacity: 1;
-}
-
-.featured-gallery .item {
-    position: absolute;
-    width: 100%;
-}
-
-.featured-gallery img {
-    display: block;
-    width: 112.25%;
-    max-width: 112.25%;
-    margin-left: -6.125%;
-    pointer-events: none;
-}
-
-.featured-gallery .i1 {
-    left: 0%;
-}
-.featured-gallery .i2 {
-    left: 100%;
-}
-.featured-gallery .i3 {
-    left: 200%;
-}
-.featured-gallery .i4 {
-    left: 300%;
-}
-
-.invitation {
-    text-align: center;
-}
-
-.button {
-    display: block;
-    border: 1px solid #050F35;
-    text-transform: uppercase;
-    padding: 0.75em 2em;
-    font-size: 1rem;
-}
-.button:hover {
-    background-color: #050F35;
-    color: #f4f4f4;
 }
 
 .gallery {

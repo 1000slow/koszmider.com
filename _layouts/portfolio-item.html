@@ -5,33 +5,18 @@ layout: default
 {% assign filename = page.path | split: "/" | last %}
 {% assign directory = page.path | remove: filename %}
 
-<div class="narrow">
-    <div class="content portfolio-item">
-        {% if false and page.images.size > 1 %}
-        <div class="gallery item-gallery">
-            <ul>
-                {% for img in page.images %}
-                {% assign id = img | split: "." | first | slugify %}
-                    <li>
-                        <a href="#{{ id }}" style="background-image: url(/assets/portfolio/{{ img }});">
-                            <img src="/assets/portfolio/{{ img }}" alt="{{ page.title }}" />
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-
-        <ul class="images">
+<div class="container">
+    <div id="portfolio-item">
+        <ul class="images {% if page.half_width %}half-width{% endif %}">
             {% for img in page.images %}
                 {% assign id = img | split: "." | first | slugify %}
 
-                <li class="image" id="{{ id }}">
-                    <a href="/assets/portfolio/{{ img }}">
-                        <img src="/assets/portfolio/{{ img }}" alt="{{ page.title }}" />
-                    </a>
+                <li class="image {% if page.corner_position %}corner corner-{{ page.corner_position}} corner-{{ page.corner_color }}{% endif %}" id="{{ id }}">
+                    <img src="/assets/portfolio/{{ img }}" alt="{{ page.title }}" />
                 </li>
             {% endfor %}
         </ul>
+
+        {{ content }}
     </div>
 </div>
