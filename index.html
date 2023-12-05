@@ -2,6 +2,7 @@
 layout: home
 permalink: /
 ---
+
 <div class="container">
     <div id="hero">
         <img src="/assets/img/hero.png" alt="" width="2612" height="2501" />
@@ -17,7 +18,7 @@ permalink: /
         <ul>
             {% for item in site.portfolio %}
             <li {% if item.featured %}class="featured"{% endif %}>
-                <a href="{{ item.url }}" style="background-image: url(/assets/portfolio/{{ item.main_img }});">
+                <a href="{{ item.url }}" style="background-image: url('/assets/portfolio/{{ item.main_img }}');">
                     <img src="/assets/portfolio/{{ item.main_img }}" />
                     {% if item.stack %}
                     <img src="/assets/img/stack-{{ item.stack_color }}.png" alt="Multiple items" class="stack" />
@@ -27,6 +28,26 @@ permalink: /
             {% endfor %}
         </ul>
     </div>
+
+    <div id="afterhours">
+        <h2>Afterhours</h2>
+    </div>
+
+    <div class="gallery">
+        <ul>
+            {% for item in site.afterhours %}
+            <li {% if item.featured %}class="featured"{% endif %}>
+                <a href="{{ item.url }}" style="background-image: url('/assets/portfolio/{{ item.main_img }}');">
+                    <img src="/assets/portfolio/{{ item.main_img }}" />
+                    {% if item.stack %}
+                    <img src="/assets/img/stack-{{ item.stack_color }}.png" alt="Multiple items" class="stack" />
+                    {% endif %}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
 
     <div id="about-me">
         <h2>About me</h2>
@@ -61,3 +82,38 @@ permalink: /
         </div>
     </div>
 </div>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <script>
+        // Function to change the background color and text color on scroll
+        function changeColorsOnScroll() {
+            const scrollPosition = window.scrollY; // Get the current vertical scroll position
+            
+            // Calculate the color transition based on the scroll position
+            let bgColor, emailColor, textColor;
+
+            // Check if it's a mobile device (max-width 768px)
+            if (window.innerWidth <= 768) {
+                bgColor = scrollPosition > 9000 ? '#011012' : '#FBFBFB'; // Background color for mobile
+                textColor = scrollPosition > 9000 ? '#fff' : '#05434C'; // Text color for mobile
+            } else {
+                bgColor = scrollPosition > 1800 ? '#011012' : '#FBFBFB'; // Background color for desktop
+                textColor = scrollPosition > 1800 ? '#fff' : '#05434C'; // Text color for desktop
+                emailColor = scrollPosition > 1800 ? '#fff' : '#05434C'; // Text color for desktop
+            }
+
+            // Apply the colors to the body
+            document.body.style.backgroundColor = bgColor;
+            document.body.style.color = textColor;
+        }
+
+        // Attach the function to the 'scroll' event of the window
+        window.addEventListener('scroll', changeColorsOnScroll);
+    </script>
+</body>
+</html>
+

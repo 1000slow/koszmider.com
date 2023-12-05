@@ -20,6 +20,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
     font-weight: normal;
+    
 }
 
 ol, ul {
@@ -80,6 +81,8 @@ h2 {
         background: url("/assets/img/logo.png") no-repeat left;
         background-size: contain;
         height: 1rem;
+        font-weight: bold; /* Add bold font-weight */
+        line-height: 1.5; /* Adjust line-height to increase or decrease spacing */
 
         span {
             visibility: hidden;
@@ -209,9 +212,13 @@ nav.visible .menu {
 
 #hero,
 #portfolio,
+#afterhours,
 #about-me,
 #contact,
 #portfolio-item {
+    padding-top: 4.5rem;
+}
+#afterhours-item {
     padding-top: 4.5rem;
 }
 
@@ -234,12 +241,37 @@ nav.visible .menu {
     span {
         display: block;
         font-size: 1rem;
-        line-height: 1em;
+        line-height: 2rem;
     }
 }
 
 #portfolio h2 {
-    border-color: #FACFBB;
+    border-color: #ff6b92;
+}
+
+.gallery {
+    li + li {
+        position: relative;
+        margin-top: 1.5rem;
+    }
+
+    img {
+        display: block;
+    }
+
+    .stack {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+#afterhours h2 {
+    border-color: #ff6b92;
 }
 
 .gallery {
@@ -331,7 +363,8 @@ nav.visible .menu {
     .email a {
         display: block;
         padding: 0.75rem 1.5rem;
-        border: 2px solid #63EFC1;
+        border: 0px solid #63EFC1;
+        background-color: #63EFC1;
         font-family: futura-pt-bold, Futura, sans-serif;
         font-weight: 700;
         text-align: center;
@@ -341,7 +374,7 @@ nav.visible .menu {
     img {
         display: block;
         margin: 1.5rem auto;
-        max-width: 8rem;
+        max-width: 10rem;
     }
 
     .cta {
@@ -351,15 +384,83 @@ nav.visible .menu {
         font-size: 2rem;
         line-height: 1em;
 
+
         span {
             display: block;
             font-size: 1rem;
-            line-height: 1em;
+            line-height: 2em;
+        }
+        
+    }
+    
+}
+
+#portfolio-item {
+    .images {
+        li + li {
+            margin-top: 5rem;
+        }
+
+        .image {
+            position: relative;
+        }
+
+        .image.corner:after {
+            z-index: 100;
+            position: absolute;
+            width: 3rem;
+            height: 3rem;
+            display: block;
+            content: " ";
+        }
+
+        .image.corner-turquoise:after {
+            background: #63EFC1;
+        }
+
+        .image.corner-bottom:after {
+            bottom: -1.5rem;
+            right: -1.5rem;
+        }
+
+        img {
+            position: relative;
+            display: block;
+            z-index: 105;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+        }
+
+        &.app img,
+        &.app video {
+            border-radius: 1.5vw;
+            overflow: hidden;
+            box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.3);
+        }
+
+        .with-overlay {
+            position: relative;
+            margin-right: 15%;
+        }
+
+        .overlay {
+            width: 20%;
+            margin-top: -30%;
+            margin-left: auto;
+            margin-right: -15%;
+
+            img,
+            video {
+                border-radius: 0.75vw;
+            }
         }
     }
 }
 
-#portfolio-item {
+#afterhours-item {
     .images {
         li + li {
             margin-top: 5rem;
@@ -430,6 +531,7 @@ nav.visible .menu {
         margin: 0 auto;
     }
 
+    
     .top .container {
         display: flex;
         justify-content: space-between;
@@ -525,9 +627,60 @@ nav.visible .menu {
                 width: 50%;
             }
         }
+    
+
+        .text-section {
+            h2 {
+                word-wrap: break-word;
+                white-space: normal;
+                overflow: visible;
+        }
+    }
+}
+
+    .break-word {
+        line-height: 1.5rem;
+    }
+    @media (max-width: 767px) {
+        .break-word {
+            line-height: 1.0rem; /* Adjust the line height for mobile devices */
+        }
     }
 
+
 }
+
+#afterhours-item {
+    margin-top: 1.5rem;
+
+    .images {
+        &.half-width {
+            margin: 0 auto;
+            width: 50%;
+        }
+    }
+
+
+    .text-section {
+        h2 {
+            word-wrap: break-word;
+            white-space: normal;
+            overflow: visible;
+    }
+}
+}
+
+.break-word {
+    line-height: 1.5rem;
+}
+@media (max-width: 767px) {
+    .break-word {
+        line-height: 1.0rem; /* Adjust the line height for mobile devices */
+    }
+}
+
+
+
 
 @media (min-width: 768px), (orientation: landscape) {
     #hero {
@@ -583,6 +736,7 @@ nav.visible .menu {
             display: flex;
             align-items: center;
             justify-content: center;
+            padding-bottom: 5rem;
         }
 
         .cta {
@@ -598,5 +752,22 @@ nav.visible .menu {
                 padding-right: 3rem;
             }
         }
+    }
+}
+
+body {
+    height: 2750px; /* Default height for desktop */
+    transition: background-color 1.0s ease, color 1.0s ease; /* Add the default transition effect to the background-color and color properties */
+    background-color: #FBFBFB; /* Set the default background color */
+    color: #05434C; /* Set the default text color */
+}
+
+/* Use media queries to set different heights for desktop and mobile */
+@media screen and (max-width: 768px) {
+    body {
+        height: 9600px; /* Height for mobile */
+    }
+    #contact{
+        padding-bottom: 5rem;
     }
 }

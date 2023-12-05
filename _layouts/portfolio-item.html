@@ -7,6 +7,21 @@ layout: default
 
 <div class="container">
     <div id="portfolio-item">
+        <ul class="imageabovetext {% if page.half_width %}half-width{% endif %}">
+            {% for img in page.imageabovetext %}
+                {% assign id = img | split: "." | first | slugify %}
+
+                <li class="image {% if page.corner_position %}corner corner-{{ page.corner_position}} corner-{{ page.corner_color }}{% endif %}" id="{{ id }}">
+                    <img src="/assets/portfolio/{{ img }}" alt="{{ page.title }}" />
+                </li>
+            {% endfor %}
+        </ul>
+        <br>
+        <div class="text-section" style="margin-top: 20px; margin-bottom: 20px;">
+            <h2>{{ page.text_title }}</h2>
+            <p class="break-word" style="margin-top: 10px; margin-bottom: 10px; line-height: 1.5rem;">{{ page.text_content }}</p>
+        </div>
+        <br>
         <ul class="images {% if page.half_width %}half-width{% endif %}">
             {% for img in page.images %}
                 {% assign id = img | split: "." | first | slugify %}
@@ -18,5 +33,16 @@ layout: default
         </ul>
 
         {{ content }}
+        <div id="contact">
+            <h2>Contact</h2>
+            <div>
+                <p class="cta">Go ahead,<span>let's do something nice together!</span></p>
+                <div>
+                    <img src="/assets/img/contact-dark.png" alt="" />
+                    <p class="email"><a href="mailto:gosia@koszmider.com">gosia@koszmider.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </div>

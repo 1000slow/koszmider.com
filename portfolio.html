@@ -7,7 +7,7 @@ permalink: /portfolio/
     <ul>
         {% for item in site.portfolio %}
             <li {% if item.featured %}class="featured"{% endif %}>
-                <a href="{{ item.url }}" style="background-image: url(/assets/portfolio/{{ item.main_img }});">
+                <a href="{{ item.url }}" style="background-image: url('/assets/portfolio/{{ item.main_img }}');">
                     <img src="/assets/portfolio/{{ item.main_img }}" />
                     {% if item.stack %}
                         <img src="/assets/img/stack-{{ item.stack_color }}.png" alt="Multiple items" class="stack" />

@@ -1,0 +1,21 @@
+---
+title: Afterhours
+permalink: /afterhours/
+---
+
+<div class="gallery">
+    
+    <ul>
+        {% for item in site.afterhours %}
+            <li {% if item.featured %}class="featured"{% endif %}>
+                <a href="{{ item.url }}" style="background-image: url('/assets/portfolio/{{ item.main_img }}');">
+                    <img src="/assets/portfolio/{{ item.main_img }}" />
+                    {% if item.stack %}
+                        <img src="/assets/img/stack-{{ item.stack_color }}.png" alt="Multiple items" class="stack" />
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
