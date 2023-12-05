@@ -41,6 +41,7 @@ html {
     font-size: 16px;
 }
 
+
 body {
     padding-bottom: 3rem;
     background: #fbfbfb;
@@ -224,6 +225,13 @@ nav.visible .menu {
     padding: 0 1.5rem;
 }
 
+.text-section {
+    h2 {
+        font-family: futura-pt-bold, Futura, sans-serif;
+        line-height: 3rem;
+    }
+}
+
 #hero,
 #portfolio,
 #afterhours,
@@ -400,6 +408,7 @@ nav.visible .menu {
         font-style: normal;
         font-size: 2rem;
         line-height: 1em;
+        padding-top: 2rem;
 
 
         span {
