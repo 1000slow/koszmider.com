@@ -53,16 +53,29 @@ a {
     text-decoration: none;
 }
 
-h2 {
+body.main-page h2 {
+    font-weight: bold;
+    position: relative;
     margin-bottom: 1.5rem;
-    margin-left: -0.75rem;
+    margin-left: 2rem; /* Adjust this value to control the space between the rectangle and h2 text */
     font-family: futura-pt-bold, Futura, sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 1.5rem;
-    border-left: 1.5rem solid transparent;
-    line-height: 1.5rem;
-    text-indent: -0.75rem;
+    line-height: 1.8rem;
+    text-indent: 0rem;
+}
+
+body.main-page h2::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2rem; /* Adjust this value to control the position of the rectangle */
+    transform: translateY(-50%);
+    height: 20px; /* Adjust the height of the rectangle */
+    width: 20px; /* Adjust the width of the rectangle */
+    background-color: #ff6b92; /* Color of the rectangle */
+    border-radius: 2px; /* Adjust the border-radius for a rounded appearance */
 }
 
 .top {
@@ -74,6 +87,7 @@ h2 {
     background: #fbfbfb;
     z-index: 1000;
 }
+
 
 .top header {
     h1 {
@@ -227,7 +241,7 @@ nav.visible .menu {
     font-weight: 700;
     font-style: normal;
     font-size: 2rem;
-    line-height: 1em;
+    line-height: 1.3em;
 
     img {
         display: block;
@@ -358,6 +372,9 @@ nav.visible .menu {
 #contact {
     h2 {
         border-color: #ff6b92;
+        font-weight: 700;
+        font-family: futura-pt-bold, Futura, sans-serif;
+        
     }
 
     .email a {
@@ -634,6 +651,9 @@ nav.visible .menu {
                 word-wrap: break-word;
                 white-space: normal;
                 overflow: visible;
+                font-weight: 700;
+                font-family: futura-pt-bold, Futura, sans-serif;
+                padding-bottom: 1rem;
         }
     }
 }
@@ -644,6 +664,7 @@ nav.visible .menu {
     @media (max-width: 767px) {
         .break-word {
             line-height: 1.0rem; /* Adjust the line height for mobile devices */
+            padding-bottom: 1rem;
         }
     }
 
@@ -666,12 +687,16 @@ nav.visible .menu {
             word-wrap: break-word;
             white-space: normal;
             overflow: visible;
+            font-weight: 700;
+            font-family: futura-pt-bold, Futura, sans-serif;
+            padding-bottom: 1rem;
     }
 }
 }
 
 .break-word {
     line-height: 1.5rem;
+    padding-bottom: 1rem;
 }
 @media (max-width: 767px) {
     .break-word {
@@ -736,7 +761,8 @@ nav.visible .menu {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-bottom: 5rem;
+            padding-bottom: 0rem;
+            
         }
 
         .cta {
@@ -756,7 +782,7 @@ nav.visible .menu {
 }
 
 body {
-    height: 2750px; /* Default height for desktop */
+    height: relative; /* Default height for desktop */
     transition: background-color 1.0s ease, color 1.0s ease; /* Add the default transition effect to the background-color and color properties */
     background-color: #FBFBFB; /* Set the default background color */
     color: #05434C; /* Set the default text color */
@@ -765,9 +791,10 @@ body {
 /* Use media queries to set different heights for desktop and mobile */
 @media screen and (max-width: 768px) {
     body {
-        height: 9600px; /* Height for mobile */
+        height: relative 
     }
     #contact{
-        padding-bottom: 5rem;
+        padding-bottom: 1rem;
+        
     }
 }
